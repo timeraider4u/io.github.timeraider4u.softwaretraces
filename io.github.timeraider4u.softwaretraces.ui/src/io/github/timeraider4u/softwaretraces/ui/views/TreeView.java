@@ -1,4 +1,4 @@
-package io.github.timeraider4u.softwaretraces.views;
+package io.github.timeraider4u.softwaretraces.ui.views;
 
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;
@@ -13,7 +13,7 @@ public class TreeView extends ViewPart {
 	/**
 	 * extension ID
 	 */
-	public static final String ID = "io.github.timeraider4u.softwaretraces.views.TreeView"; //$NON-NLS-1$
+	public static final String ID = "io.github.timeraider4u.softwaretraces.ui.views.TreeView"; //$NON-NLS-1$
 
 	private TreeViewer viewer;
 

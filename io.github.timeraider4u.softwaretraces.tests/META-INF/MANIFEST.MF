@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Software Traces Tests
+Bundle-SymbolicName: io.github.timeraider4u.softwaretraces.tests
+Bundle-Version: 0.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: io.github.timeraider4u.softwaretraces;bundle-version="0.1.0"

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Software Traces GUI components
+Bundle-SymbolicName: io.github.timeraider4u.softwaretraces.ui;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: io.github.timeraider4u.softwaretraces.ui.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ io.github.timeraider4u.softwaretraces;bundle-version="0.1.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
