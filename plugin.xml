@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+	<extension point="org.eclipse.ui.views">
+		<category id="io.github.timeraider4u" name="Timeraider4u" />
+ 		<view id="io.github.timeraider4u.softwaretraces.views.TreeView"
+			name="Software Traces"
+			icon="icons/trace.png"
+			category="io.github.timeraider4u"
+			class="io.github.timeraider4u.softwaretraces.views.TreeView"
+		/>
+	</extension>
 </plugin>
