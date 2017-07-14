@@ -10,4 +10,15 @@
 			class="io.github.timeraider4u.softwaretraces.views.TreeView"
 		/>
 	</extension>
+	<!--
+	<extension point="org.eclipse.ui.perspectiveExtensions">
+		<perspectiveExtension targetID="org.eclipse.jdt.ui.JavaPerspective">
+			<view id="io.github.timeraider4u.softwaretraces.views.TreeView"
+				ratio="0.5"
+				relative="org.eclipse.ui.views.TaskList"
+				relationship="right"
+			/>
+		</perspectiveExtension>
+	</extension>
+	-->
 </plugin>
