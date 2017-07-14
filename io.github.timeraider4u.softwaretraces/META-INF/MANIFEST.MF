@@ -4,6 +4,8 @@ Bundle-Name: Software Traces
 Bundle-SymbolicName: io.github.timeraider4u.softwaretraces;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: io.github.timeraider4u.softwaretraces.Activator
-Require-Bundle: org.eclipse.core.runtime
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.capra.core;bundle-version="0.7.0",
+ org.eclipse.capra.generic.tracemodels;bundle-version="0.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
