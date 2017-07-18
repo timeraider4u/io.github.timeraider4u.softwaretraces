@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.capra.generic.tracemodels;bundle-version="0.7.0",
  org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: io.github.timeraider4u.softwaretraces.softwaretraces,
+Export-Package: io.github.timeraider4u.softwaretraces.data,
+ io.github.timeraider4u.softwaretraces.softwaretraces,
  io.github.timeraider4u.softwaretraces.softwaretraces.impl,
  io.github.timeraider4u.softwaretraces.softwaretraces.util,
  io.github.timeraider4u.softwaretraces.utils

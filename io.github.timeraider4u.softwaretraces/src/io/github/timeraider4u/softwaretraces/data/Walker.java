@@ -1,4 +1,4 @@
-package io.github.timeraider4u.softwaretraces.utils;
+package io.github.timeraider4u.softwaretraces.data;
 
 import org.eclipse.emf.common.util.EList;
 

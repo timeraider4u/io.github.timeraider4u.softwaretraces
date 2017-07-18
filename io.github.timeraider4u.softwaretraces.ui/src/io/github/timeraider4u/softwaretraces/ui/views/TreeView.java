@@ -9,22 +9,22 @@ import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.part.ViewPart;
 
 public class TreeView extends ViewPart {
-
+	
 	/**
 	 * extension ID
 	 */
 	public static final String ID = "io.github.timeraider4u.softwaretraces.ui.views.TreeView"; //$NON-NLS-1$
-
+	
 	private TreeViewer viewer;
-
+	
 	public TreeView() {
 	}
-
+	
 	@Override
 	public void createPartControl(final Composite parent) {
 		this.viewer = new TreeViewer(parent,
 				SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
-		// this.viewer.setContentProvider(new SWTraceTreeContentProvider());
+		this.viewer.setContentProvider(new ContentProvider());
 		// this.viewer.setLabelProvider(new SWTraceViewLabelProvider());
 		// this.viewer.setSorter(new TreeElementSorter());
 		// this.viewer.setInput(SWTraceTreeContentProvider.getDefaultInput(this
@@ -36,7 +36,7 @@ public class TreeView extends ViewPart {
 		// new MyChangedListener(this.viewer));
 		this.setUpToolBar();
 	}
-
+	
 	// private void setUpDragAndDropListeners() {
 	// final Transfer[] transferTypes = new Transfer[] {
 	// TextTransfer.getInstance() };
@@ -45,7 +45,7 @@ public class TreeView extends ViewPart {
 	// // this.viewer.addDropSupport(DND.DROP_MOVE | DND.DROP_COPY,
 	// // transferTypes, new MyDropListener(this, this.viewer));
 	// }
-
+	
 	private void setUpToolBar() {
 		final IActionBars bars = this.getViewSite().getActionBars();
 		final IToolBarManager manager = bars.getToolBarManager();
@@ -63,7 +63,7 @@ public class TreeView extends ViewPart {
 		manager.add(new Separator());
 		// manager.add(new DeleteTraceAction(manager, this.viewer));
 	}
-
+	
 	@Override
 	public void setFocus() {
 		this.viewer.getControl().setFocus();

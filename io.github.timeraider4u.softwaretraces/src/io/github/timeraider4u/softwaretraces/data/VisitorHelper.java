@@ -1,4 +1,4 @@
-package io.github.timeraider4u.softwaretraces.utils;
+package io.github.timeraider4u.softwaretraces.data;
 
 import io.github.timeraider4u.softwaretraces.softwaretraces.Feature;
 import io.github.timeraider4u.softwaretraces.softwaretraces.Model;
@@ -6,13 +6,20 @@ import io.github.timeraider4u.softwaretraces.softwaretraces.MyNode;
 import io.github.timeraider4u.softwaretraces.softwaretraces.Trace;
 
 public class VisitorHelper implements Visitor {
-
-	private final Visitor visitor;
 	
+	private final Visitor visitor;
+
 	public VisitorHelper(final Visitor visitor) {
 		this.visitor = visitor;
 	}
 
+	public void visit(final Object object) {
+		if (object instanceof MyNode) {
+			final MyNode myNode = (MyNode) object;
+			this.visit(myNode);
+		}
+	}
+	
 	public void visit(final MyNode myNode) {
 		if (myNode instanceof Model) {
 			final Model model = (Model) myNode;
@@ -25,20 +32,20 @@ public class VisitorHelper implements Visitor {
 			this.visit(trace);
 		}
 	}
-	
+
 	@Override
 	public void visit(final Model model) {
 		this.visitor.visit(model);
 	}
-	
+
 	@Override
 	public void visit(final Feature feature) {
 		this.visitor.visit(feature);
 	}
-	
+
 	@Override
 	public void visit(final Trace trace) {
 		this.visitor.visit(trace);
 	}
-	
+
 }

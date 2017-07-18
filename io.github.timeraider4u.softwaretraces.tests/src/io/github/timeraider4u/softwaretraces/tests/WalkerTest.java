@@ -4,13 +4,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import io.github.timeraider4u.softwaretraces.data.Visitor;
+import io.github.timeraider4u.softwaretraces.data.Walker;
+import io.github.timeraider4u.softwaretraces.data.WalkerType;
 import io.github.timeraider4u.softwaretraces.softwaretraces.Feature;
 import io.github.timeraider4u.softwaretraces.softwaretraces.Model;
 import io.github.timeraider4u.softwaretraces.softwaretraces.Trace;
 import io.github.timeraider4u.softwaretraces.utils.Repository;
-import io.github.timeraider4u.softwaretraces.utils.Visitor;
-import io.github.timeraider4u.softwaretraces.utils.Walker;
-import io.github.timeraider4u.softwaretraces.utils.WalkerType;
 
 public class WalkerTest {
 

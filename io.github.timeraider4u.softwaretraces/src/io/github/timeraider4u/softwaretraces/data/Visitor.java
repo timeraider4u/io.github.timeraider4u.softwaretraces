@@ -1,4 +1,4 @@
-package io.github.timeraider4u.softwaretraces.utils;
+package io.github.timeraider4u.softwaretraces.data;
 
 import io.github.timeraider4u.softwaretraces.softwaretraces.Feature;
 import io.github.timeraider4u.softwaretraces.softwaretraces.Model;

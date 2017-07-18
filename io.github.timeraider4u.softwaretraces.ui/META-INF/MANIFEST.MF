@@ -6,6 +6,7 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: io.github.timeraider4u.softwaretraces.ui.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- io.github.timeraider4u.softwaretraces;bundle-version="0.1.0"
+ io.github.timeraider4u.softwaretraces;bundle-version="0.1.0",
+ org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
