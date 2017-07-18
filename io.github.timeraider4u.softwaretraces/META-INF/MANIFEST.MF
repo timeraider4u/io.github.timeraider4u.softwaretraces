@@ -15,5 +15,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: io.github.timeraider4u.softwaretraces.softwaretraces,
  io.github.timeraider4u.softwaretraces.softwaretraces.impl,
+ io.github.timeraider4u.softwaretraces.softwaretraces.util,
  io.github.timeraider4u.softwaretraces.utils
 Bundle-ActivationPolicy: lazy
