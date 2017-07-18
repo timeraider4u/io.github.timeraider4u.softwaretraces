@@ -24,6 +24,6 @@ hs_err_pid*
 # Backup files
 *~
 
-/bin/
-/target/
-/emf-gen/
+bin/
+target/
+emf-gen/
