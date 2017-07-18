@@ -41,6 +41,30 @@ public class WalkerTest {
 		Assert.assertEquals(6, visitor.features);
 		Assert.assertEquals(7, visitor.traces);
 	}
+	
+	@Test
+	public void testWalkerHelperNoRecursionForFeatureOffice() {
+		final MyVisitor visitor = new MyVisitor();
+		final Walker walker = new Walker(visitor, false);
+		final Feature office = this.model.getFeatures().get(1);
+		Assert.assertNotNull(office);
+		walker.visit(office);
+		Assert.assertEquals(0, visitor.models);
+		Assert.assertEquals(3, visitor.features);
+		Assert.assertEquals(0, visitor.traces);
+	}
+
+	@Test
+	public void testWalkerHelperRecursionForFeatureOffice() {
+		final MyVisitor visitor = new MyVisitor();
+		final Walker walker = new Walker(visitor, true);
+		final Feature office = this.model.getFeatures().get(1);
+		Assert.assertNotNull(office);
+		walker.visit(office);
+		Assert.assertEquals(0, visitor.models);
+		Assert.assertEquals(5, visitor.features);
+		Assert.assertEquals(4, visitor.traces);
+	}
 
 	private class MyVisitor implements Visitor {
 
