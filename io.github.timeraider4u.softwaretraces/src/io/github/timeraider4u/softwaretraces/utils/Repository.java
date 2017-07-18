@@ -15,11 +15,11 @@ import io.github.timeraider4u.softwaretraces.softwaretraces.Model;
 import io.github.timeraider4u.softwaretraces.softwaretraces.SoftwareTracesFactory;
 
 public class Repository {
-	
+
 	private Repository() {
-
+		
 	}
-
+	
 	public static Model createModel(final String uriAsString) {
 		final Model result = SoftwareTracesFactory.eINSTANCE.createModel();
 		if (uriAsString != null) {
@@ -27,7 +27,7 @@ public class Repository {
 		}
 		return result;
 	}
-	
+
 	public static Model loadModel(final String uriAsString) {
 		final Resource resource = Repository.loadResource(uriAsString);
 		if (resource == null) {
@@ -43,10 +43,10 @@ public class Repository {
 		}
 		final Model model = (Model) object;
 		model.setResourceFileName(uriAsString);
-		model.setLastSelected(null);
+		// model.setLastSelected(null);
 		return model;
 	}
-
+	
 	private static Resource loadResource(final String uriAsString) {
 		try {
 			final Resource result = Repository
@@ -57,7 +57,7 @@ public class Repository {
 		}
 		return null;
 	}
-	
+
 	private static Resource loadResourceWithoutHandling(
 			final String uriAsString) throws IOException {
 		final URI uri = URI.createURI(uriAsString);
@@ -67,14 +67,14 @@ public class Repository {
 		resource.load(options);
 		return resource;
 	}
-	
+
 	public static boolean saveModel(final Model model, final String uriAsString,
 			final boolean overwriteExistingContent) {
 		try {
 			final URI uri = URI.createURI(uriAsString);
 			final ResourceSet resourceSet = Repository.getResourceSetForURI();
 			Resource resource = null;
-			
+
 			if (overwriteExistingContent) {
 				resource = resourceSet.createResource(uri);
 				final EList<EObject> content = resource.getContents();
@@ -91,19 +91,19 @@ public class Repository {
 		}
 		return false;
 	}
-
+	
 	private static void saveResourceWithoutHandling(final Resource resource,
 			final Model model) throws IOException {
 		final Map<Object, Object> options = Repository.getOptions();
 		resource.save(options);
 	}
-	
+
 	private static ResourceSet getResourceSetForURI() {
 		return new ResourceSetImpl();
 	}
-	
+
 	private static Map<Object, Object> getOptions() {
 		return new HashMap<Object, Object>();
 	}
-	
+
 }

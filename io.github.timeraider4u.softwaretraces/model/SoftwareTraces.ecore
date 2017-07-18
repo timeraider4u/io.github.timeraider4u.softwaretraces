@@ -8,7 +8,6 @@
         eType="#//Feature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="traces" upperBound="-1"
         eType="#//Trace" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lastSelected" eType="#//MyNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature" eSuperTypes="#//MyNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -23,20 +22,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="traces" upperBound="-1"
         eType="#//Trace" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MyNodeVisitor" abstract="true" interface="true">
-    <eOperations name="visit">
-      <eParameters name="model" eType="#//Model"/>
-    </eOperations>
-    <eOperations name="visit">
-      <eParameters name="feature" eType="#//Feature"/>
-    </eOperations>
-    <eOperations name="visit">
-      <eParameters name="trace" eType="#//Trace"/>
-    </eOperations>
-    <eOperations name="visit">
-      <eParameters name="myNode" eType="#//MyNode"/>
-    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MyNode" abstract="true" interface="true"/>
 </ecore:EPackage>

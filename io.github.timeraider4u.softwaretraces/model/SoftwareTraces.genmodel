@@ -26,21 +26,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareTraces.ecore#//Trace/lineNumber"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareTraces.ecore#//Trace/traces"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="SoftwareTraces.ecore#//MyNodeVisitor">
-      <genOperations ecoreOperation="SoftwareTraces.ecore#//MyNodeVisitor/visit">
-        <genParameters ecoreParameter="SoftwareTraces.ecore#//MyNodeVisitor/visit/model"/>
-      </genOperations>
-      <genOperations ecoreOperation="SoftwareTraces.ecore#//MyNodeVisitor/visit.1">
-        <genParameters ecoreParameter="SoftwareTraces.ecore#//MyNodeVisitor/visit.1/feature"/>
-      </genOperations>
-      <genOperations ecoreOperation="SoftwareTraces.ecore#//MyNodeVisitor/visit.2">
-        <genParameters ecoreParameter="SoftwareTraces.ecore#//MyNodeVisitor/visit.2/trace"/>
-      </genOperations>
-      <genOperations ecoreOperation="SoftwareTraces.ecore#//MyNodeVisitor/visit.3">
-        <genParameters ecoreParameter="SoftwareTraces.ecore#//MyNodeVisitor/visit.3/myNode"/>
-      </genOperations>
-    </genClasses>
     <genClasses ecoreClass="SoftwareTraces.ecore#//MyNode"/>
-    <genClasses ecoreClass="SoftwareTraces.ecore#//Repository"/>
   </genPackages>
 </genmodel:GenModel>

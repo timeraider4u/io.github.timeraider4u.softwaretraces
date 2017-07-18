@@ -6,7 +6,7 @@
     xmlns:io.github.timeraider4u.softwaretraces="https://timeraider4u.github.io/softwaretraces"
     xsi:schemaLocation="https://timeraider4u.github.io/softwaretraces ../../io.github.timeraider4u.softwaretraces/model/SoftwareTraces.ecore"
     resourceFileName="platform:/plugin/io.github.timeraider4u.softwaretraces.tests/res/Model1.softwaretraces.xmi"
-    lastSelected="/">
+    >
   <features
       name="Main entry point">
     <traces
