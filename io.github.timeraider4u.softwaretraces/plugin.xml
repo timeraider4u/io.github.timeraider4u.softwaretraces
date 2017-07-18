@@ -2,4 +2,12 @@
 <?eclipse version="3.4"?>
 <plugin>
 	<!-- extensions -->
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SoftwareTraces -->
+      <package
+            uri="https://timeraider4u.github.io/softwaretraces"
+            class="io.github.timeraider4u.softwaretraces.softwaretraces.SoftwareTracesPackage"
+            genModel="model/SoftwareTraces.genmodel"/>
+   </extension>
+
 </plugin>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<io.github.timeraider4u.softwaretraces:Model
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:io.github.timeraider4u.softwaretraces="https://timeraider4u.github.io/softwaretraces"
+    xsi:schemaLocation="https://timeraider4u.github.io/softwaretraces ../../io.github.timeraider4u.softwaretraces/model/SoftwareTraces.ecore"
+    resourceFileName="platform:/plugin/io.github.timeraider4u.softwaretraces.tests/res/Model1.softwaretraces.xmi"
+    lastSelected="/">
+  <features
+      name="Main entry point">
+    <traces
+        projectName="SampleProject"
+        fileName="Main.java"
+        lineNumber="15"/>
+  </features>
+  <features
+      name="Office">
+    <features
+        name="Print">
+      <features
+          name="PrintToPDF">
+        <traces
+            projectName="SampleProject"
+            fileName="Main.java"
+            lineNumber="30">
+          <traces
+              projectName="SampleProject"
+              fileName="Print.java"
+              lineNumber="56">
+            <traces
+                projectName="SampleProject"
+                fileName="Print.java"
+                lineNumber="105"/>
+            <traces
+                projectName="SampleProject"
+                fileName="345"/>
+          </traces>
+        </traces>
+      </features>
+      <features
+          name="PrintToPrinter"/>
+    </features>
+    <features
+        name="Scan"/>
+  </features>
+  <traces projectName="SampleProject"
+      fileName="Main.java"/>
+  <traces projectName="SampleProject"
+      fileName="Main.java"/>
+</io.github.timeraider4u.softwaretraces:Model>

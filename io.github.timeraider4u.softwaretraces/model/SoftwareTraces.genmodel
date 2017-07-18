@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/io.github.timeraider4u.softwaretraces/emf-gen"
+    modelPluginID="io.github.timeraider4u.softwaretraces" forceOverwrite="true" modelName="SoftwareTraces"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    commentFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" language="" classNamePattern="" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>SoftwareTraces.ecore</foreignModel>
+  <genPackages prefix="SoftwareTraces" basePackage="io.github.timeraider4u.softwaretraces"
+      disposableProviderFactory="true" ecorePackage="SoftwareTraces.ecore#/" publicationLocation="">
+    <genClasses ecoreClass="SoftwareTraces.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareTraces.ecore#//Model/resourceFileName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareTraces.ecore#//Model/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareTraces.ecore#//Model/traces"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareTraces.ecore#//Model/lastSelected"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareTraces.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareTraces.ecore#//Feature/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareTraces.ecore#//Feature/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareTraces.ecore#//Feature/traces"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareTraces.ecore#//Trace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareTraces.ecore#//Trace/projectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareTraces.ecore#//Trace/fileName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareTraces.ecore#//Trace/lineNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareTraces.ecore#//Trace/traces"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SoftwareTraces.ecore#//MyNodeVisitor">
+      <genOperations ecoreOperation="SoftwareTraces.ecore#//MyNodeVisitor/visit">
+        <genParameters ecoreParameter="SoftwareTraces.ecore#//MyNodeVisitor/visit/model"/>
+      </genOperations>
+      <genOperations ecoreOperation="SoftwareTraces.ecore#//MyNodeVisitor/visit.1">
+        <genParameters ecoreParameter="SoftwareTraces.ecore#//MyNodeVisitor/visit.1/feature"/>
+      </genOperations>
+      <genOperations ecoreOperation="SoftwareTraces.ecore#//MyNodeVisitor/visit.2">
+        <genParameters ecoreParameter="SoftwareTraces.ecore#//MyNodeVisitor/visit.2/trace"/>
+      </genOperations>
+      <genOperations ecoreOperation="SoftwareTraces.ecore#//MyNodeVisitor/visit.3">
+        <genParameters ecoreParameter="SoftwareTraces.ecore#//MyNodeVisitor/visit.3/myNode"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareTraces.ecore#//MyNode"/>
+    <genClasses ecoreClass="SoftwareTraces.ecore#//Repository"/>
+  </genPackages>
+</genmodel:GenModel>
