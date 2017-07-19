@@ -2,17 +2,23 @@ package io.github.timeraider4u.softwaretraces.ui.views;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.preferences.IPreferencesService;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 
+import io.github.timeraider4u.softwaretraces.data.VisitorElementsAsArray;
+import io.github.timeraider4u.softwaretraces.data.Walker;
+import io.github.timeraider4u.softwaretraces.data.WalkerType;
 import io.github.timeraider4u.softwaretraces.softwaretraces.Model;
+import io.github.timeraider4u.softwaretraces.softwaretraces.MyNode;
 import io.github.timeraider4u.softwaretraces.utils.EclipseUtils;
 import io.github.timeraider4u.softwaretraces.utils.Repository;
 
 public class ContentProvider implements ITreeContentProvider {
-	
-	// private static final String QUALIFIER =
-	// "io.github.timeraider4u.softwaretraces";
-	// private static final String KEY = "resourceFileName";
+
+	private static final String QUALIFIER = "io.github.timeraider4u.softwaretraces";
+	private static final String KEY = "resourceFileName";
 	private static final String DEFAULT_PROJECT = "SoftwareTraces";
 	private static final String DEFAULT_FNAME = "SoftwareTraces.softwaretraces.xmi";
 	private static final String DEFAULT_RES_FNAME = "platform:/resource/"
@@ -26,11 +32,10 @@ public class ContentProvider implements ITreeContentProvider {
 	}
 
 	private Model getModel() {
-		// final IPreferencesService service = Platform.getPreferencesService();
-		// final String resFileName =
-		// service.getString(ContentProvider.QUALIFIER,
-		// ContentProvider.KEY, ContentProvider.DEFAULT_RES_FNAME, null);
-		final String resFileName = ContentProvider.DEFAULT_RES_FNAME;
+		final IPreferencesService service = Platform.getPreferencesService();
+		final String resFileName = service.getString(ContentProvider.QUALIFIER,
+				ContentProvider.KEY, ContentProvider.DEFAULT_RES_FNAME, null);
+		// final String resFileName = ContentProvider.DEFAULT_RES_FNAME;
 		final IProject defaultProject = this.getProject();
 		final IFile resource = defaultProject.getFile(resFileName);
 		if (resource.exists()) {
@@ -56,26 +61,33 @@ public class ContentProvider implements ITreeContentProvider {
 
 	@Override
 	public Object[] getElements(final Object inputElement) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Object[] { this.model };
 	}
 
 	@Override
 	public Object[] getChildren(final Object parentElement) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object getParent(final Object element) {
-		// TODO Auto-generated method stub
-		return null;
+		final VisitorElementsAsArray visitor = new VisitorElementsAsArray();
+		final Walker walker = new Walker(visitor, WalkerType.Children);
+		walker.visit(this.model);
+		final MyNode[] items = visitor.getChildren();
+		return items;
 	}
 
 	@Override
 	public boolean hasChildren(final Object element) {
-		// TODO Auto-generated method stub
-		return false;
+		final Object[] children = this.getChildren(element);
+		final boolean result = (children.length > 0);
+		return result;
+	}
+
+	@Override
+	public Object getParent(final Object element) {
+		if (!(element instanceof EObject)) {
+			return null;
+		}
+		final EObject eObject = (EObject) element;
+		final EObject container = eObject.eContainer();
+		return container;
 	}
 	
 }
